@@ -50,6 +50,6 @@
   left: 45%; 
   margin: 0 auto;
   padding: 0;
-  font-weight: bold;
+  font-weight: bolder;
 
 }

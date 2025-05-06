@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "ant-button": "antd-mini/es/Button/index",
+    "ant-progress": "antd-mini/es/Progress/index",
     "count-down": "/components/count-down/count-down",
     "ant-typography": "antd-mini/es/Typography/index",
     "ant-container": "antd-mini/es/Container/index",

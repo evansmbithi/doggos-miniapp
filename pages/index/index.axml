@@ -25,17 +25,75 @@
       <ant-loading type="spin" color="#1677ff" size="large" />
     </view>
 
-    <previous-image-btn onClickMe="previousImage" 
+    <view style="width:.5rem">
+      <previous-image-btn onClickMe="previousImage" 
     a:if="{{ prevImage.length >= 2 }}"
     />
+    </view>
+    
     <image class="doggo-img" mode="scaleToFill" src={{ doggos_pic }} alt="picture of a dog"/>
-    <next-image-btn onClickMe="nextImage" 
-    isDisabled="{{ prevImage.length >= 12 }}"  
-    />    
+    
+    <view style="width:.5rem">
+      <next-image-btn onClickMe="nextImage" 
+      isDisabled="{{ prevImage.length >= 12 }}"  
+      /> 
+    </view>   
   </view>
 
   <view style="text-align:center">
     <count-down></count-down>
+  </view>
+
+  <view>
+    <ant-progress
+    percent="{{percent2}}"
+    strokeWidth="15"
+    style="margin-top: 40rpx;"
+  ></ant-progress>
+  </view>
+
+  <view>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      50
+    </ant-button>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      100
+    </ant-button>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      200
+    </ant-button>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      500
+    </ant-button>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      1000
+    </ant-button>
+  </view>
+
+  
+
+  <view>
+    <ant-button
+      inline
+      onTap="handleIncrease"
+    >
+      Increase
+    </ant-button>
   </view>
   
 </ant-container>

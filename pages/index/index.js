@@ -2,6 +2,7 @@ const app = getApp();
 
 Page({
   data:{
+    percent2: 60,
     doggos_pic: '',
     isSplash: true,
     isLoading: false,
@@ -49,6 +50,13 @@ Page({
       path: 'pages/index/index',
     };
   },
+
+  handleIncrease() {
+    const newPercent = this.data.percent2 + 20;
+    this.setData({
+        percent2: Math.max(Math.min(100, newPercent), 0),
+    });
+},
 
   nextImage(){
     this.setData({iterate: this.data.iterate + 1})
