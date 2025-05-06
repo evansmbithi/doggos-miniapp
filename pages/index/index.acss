@@ -17,3 +17,8 @@
   display: flex;
   align-items: center;
 }
+
+.doggo-img{
+  border-radius: .5rem;
+  margin: .1rem;
+}

@@ -8,9 +8,11 @@
   </view>
 
   <view class="doggo-section">
-    <previous-image-btn onClickMe="" />
-    <image mode="scaleToFill" src={{doggos_pic}} alt="picture of a dog"/>
-    <next-image-btn onClickMe="nextImage"/>    
+    <previous-image-btn onClickMe="previousImage" />
+    <image class="doggo-img" mode="scaleToFill" src={{ doggos_pic }} alt="picture of a dog"/>
+    <next-image-btn onClickMe="nextImage" 
+    isDisabled="{{ prevImage.length == 10 }}"  
+    />    
   </view>
 </ant-container>
 

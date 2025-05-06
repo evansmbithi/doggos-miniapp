@@ -4,7 +4,8 @@ Page({
   data:{
     doggos_pic: '',
     isLoading: true,
-    prevImage: []
+    prevImage: [],
+    iterate: 0
   },
   onLoad(query) {
     // Page load
@@ -17,7 +18,10 @@ Page({
   onShow() {
     // Page display    
     app.fetchDoggo().then((doggo) => {
-      this.setData({doggos_pic: doggo})
+      this.setData({doggos_pic: doggo});
+      this.setData({
+        prevImage: [...this.data.prevImage, doggo] //apppend new image
+      });
     })
   },
   onHide() {
@@ -48,15 +52,40 @@ Page({
       isLoading: true
     });
 
-    app.fetchDoggo()
-    .then((doggo) => {
-      this.setData({doggos_pic: doggo})
-    })
-    .then(()=>{
+    if ((this.data.prevImage).length <= 3){
+      app.fetchDoggo()
+      .then((doggo) => {
+        this.setData({doggos_pic: doggo});
+        this.setData({
+          prevImage: [...this.data.prevImage, doggo] //apppend new image
+        });
+      })
+      .then(()=>{
+        this.setData({
+          isLoading: false
+        });
+      })
+    }else{
+      this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
+      this.setData({iterate: this.data.iterate + 1})
+      if (this.data.iterate > 3){
+        this.setData({iterate: 0})
+      }
       this.setData({
         isLoading: false
       });
-    })
+
+    }
+    
+    // console.log(this.data.iterate)
+  },
+  previousImage(){
+    this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
+    this.setData({iterate: this.data.iterate - 1})
+    if (this.data.iterate < 0){
+      this.setData({iterate: 3})
+    }
+    // console.log(this.data.iterate)
   },
   showLoader(){
     setTimeout(()=>{

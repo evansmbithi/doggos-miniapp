@@ -1,4 +1,4 @@
-<button class="next-image" onTap="onClickMe">
+<button class="next-image" onTap="onClickMe" disabled="{{isDisabled}}">
   <ant-icon
     type="UpCircleOutline"
     className="btn-outline"
