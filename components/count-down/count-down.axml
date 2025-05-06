@@ -1,0 +1,10 @@
+<view>
+  <ant-countdown
+  countdownEndTime="{{countdownDay}}"
+  countdownType="day"
+  onCountdownChange="handleCountdownChange"
+>
+  <text slot="prefix"></text>
+  <text slot="suffix"></text>
+</ant-countdown>
+</view>

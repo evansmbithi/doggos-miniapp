@@ -33,6 +33,11 @@
     isDisabled="{{ prevImage.length >= 12 }}"  
     />    
   </view>
+
+  <view style="text-align:center">
+    <count-down></count-down>
+  </view>
+  
 </ant-container>
 
 

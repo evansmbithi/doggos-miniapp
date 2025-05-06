@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "count-down": "/components/count-down/count-down",
     "ant-typography": "antd-mini/es/Typography/index",
     "ant-container": "antd-mini/es/Container/index",
     "ant-loading": "antd-mini/es/Loading/index",

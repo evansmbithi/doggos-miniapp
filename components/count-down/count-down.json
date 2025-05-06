@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ant-countdown": "antd-mini/es/Countdown/index"
+  }
+}
