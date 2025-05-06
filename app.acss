@@ -1,0 +1,17 @@
+page {
+  flex: 1;
+  display: flex;
+  background: #f7f7f7;
+}
+
+.btn-outline{
+  color: #000;
+  background: none;
+  border-radius: 50%;  
+  font-size: .5rem;
+}
+
+.btn-outline:active{
+  background: #000;
+  color: #fff;
+}

@@ -1,0 +1,5 @@
+.previous-image{
+  background: none;
+  border: none;
+  transform: rotate(-90deg);
+}

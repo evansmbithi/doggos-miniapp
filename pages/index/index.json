@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "previous-image-btn": "/components/previous-image/previous-image",
+    "next-image-btn": "/components/next-image/next-image"    
+  }
+}

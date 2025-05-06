@@ -1,0 +1,6 @@
+<button class="previous-image" onTap="fetchPreviousImage">
+  <ant-icon
+    type="UpCircleOutline"
+    className="btn-outline"
+/>
+</button>
