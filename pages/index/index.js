@@ -48,11 +48,19 @@ Page({
     };
   },
   nextImage(){
-    this.setData({
-      isLoading: true
-    });
+    this.setData({iterate: this.data.iterate + 1})
+    // console.log(this.data.iterate)
+    if (this.data.iterate >= 10){
+      this.setData({iterate: 0})
+    }
+    if (this.data.prevImage[this.data.iterate] != undefined) {     
+      this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
+      
+    } else if ((this.data.prevImage).length <= 10){
+      this.setData({
+        isLoading: true
+      });
 
-    if ((this.data.prevImage).length <= 3){
       app.fetchDoggo()
       .then((doggo) => {
         this.setData({doggos_pic: doggo});
@@ -65,27 +73,21 @@ Page({
           isLoading: false
         });
       })
-    }else{
-      this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
-      this.setData({iterate: this.data.iterate + 1})
-      if (this.data.iterate > 3){
-        this.setData({iterate: 0})
-      }
-      this.setData({
-        isLoading: false
-      });
-
     }
-    
-    // console.log(this.data.iterate)
   },
   previousImage(){
-    this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
+    
     this.setData({iterate: this.data.iterate - 1})
-    if (this.data.iterate < 0){
-      this.setData({iterate: 3})
+    if (this.data.iterate <= 0){
+      if ((this.data.prevImage).length >= 3) {
+        this.setData({iterate: (this.data.prevImage).length - 1})        
+      }else{      
+      this.setData({iterate: 0})
     }
+  }
+    this.setData({doggos_pic: this.data.prevImage[this.data.iterate]});
     // console.log(this.data.iterate)
+    // console.log(this.data.prevImage[this.data.iterate])
   },
   showLoader(){
     setTimeout(()=>{
