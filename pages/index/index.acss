@@ -1,0 +1,19 @@
+.container{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader{
+  position: absolute;
+  top: 40vh;
+  left: 40%;
+}
+
+.doggo-section{
+  display: flex;
+  align-items: center;
+}

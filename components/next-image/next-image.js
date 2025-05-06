@@ -1,12 +1,12 @@
 Component({
   props: {
     text: 'Button',
-    fetchNextImage: () => {},
+    onClickMe: () => {},
   },
 
   methods: {
-    fetchNextImage() {
-      this.props.fetchNextImage();
+    onClickMe() {
+      this.props.onClickMe();
     },
   },
 });

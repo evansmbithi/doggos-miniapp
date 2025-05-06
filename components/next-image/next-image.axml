@@ -1,4 +1,4 @@
-<button class="next-image" onTap="fetchNextImage">
+<button class="next-image" onTap="onClickMe">
   <ant-icon
     type="UpCircleOutline"
     className="btn-outline"

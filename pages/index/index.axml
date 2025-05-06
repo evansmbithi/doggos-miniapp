@@ -1,5 +1,19 @@
-<previous-image-btn/>
 
-<next-image-btn/>
+<ant-container
+    title="Save a street dog, today!"
+    className="container"
+  >
+  <view class="loader" a:if="{{ isLoading }}">
+    <ant-loading type="spin" color="#000" />
+  </view>
+
+  <view class="doggo-section">
+    <previous-image-btn onClickMe="" />
+    <image mode="scaleToFill" src={{doggos_pic}} alt="picture of a dog"/>
+    <next-image-btn onClickMe="nextImage"/>    
+  </view>
+</ant-container>
+
+
   
 

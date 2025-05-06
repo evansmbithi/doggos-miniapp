@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "ant-container": "antd-mini/es/Container/index",
+    "ant-loading": "antd-mini/es/Loading/index",
     "previous-image-btn": "/components/previous-image/previous-image",
     "next-image-btn": "/components/next-image/next-image"    
   }

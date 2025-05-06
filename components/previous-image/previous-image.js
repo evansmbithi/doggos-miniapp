@@ -1,12 +1,12 @@
 Component({
   props: {
     text: 'Button',
-    fetchPreviousImage: () => {},
+    onClickMe: () => {},
   },
 
   methods: {
-    fetchPreviousImage() {
-      this.props.fetchPreviousImage();
+    onClickMe() {
+      this.props.onClickMe();
     },
   },
 });
