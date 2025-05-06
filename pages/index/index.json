@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "ant-typography": "antd-mini/es/Typography/index",
     "ant-container": "antd-mini/es/Container/index",
     "ant-loading": "antd-mini/es/Loading/index",
     "previous-image-btn": "/components/previous-image/previous-image",

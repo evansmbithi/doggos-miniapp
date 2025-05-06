@@ -1,8 +1,24 @@
 
+<view class="splash" a:if="{{ isSplash }}">
+  <image src="https://dog.ceo/img/dog-api-logo.svg" />
+  <ant-typography
+    className="typography"
+    fontWeight="bold"
+    icon=""
+    style="color: #1677ff"
+    data-type="copy"
+    data-text=""
+  >
+  Street Doggos
+  </ant-typography>
+  <ant-loading type="spin" color="#000" />
+</view>
+
 <ant-container
     title="Save a street dog, today!"
     className="container"
   >
+  
   <view class="loader" a:if="{{ isLoading }}">
     <ant-loading type="spin" color="#000" />
   </view>

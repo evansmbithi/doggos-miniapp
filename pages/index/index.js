@@ -3,14 +3,16 @@ const app = getApp();
 Page({
   data:{
     doggos_pic: '',
-    isLoading: true,
+    isSplash: true,
+    isLoading: false,
     prevImage: [],
     iterate: 0
   },
   onLoad(query) {
     // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
-    this.showLoader()
+    this.showSplash()
+
   },
   onReady() {
     // Page loading is complete
@@ -47,7 +49,7 @@ Page({
       path: 'pages/index/index',
     };
   },
-  
+
   nextImage(){
     this.setData({iterate: this.data.iterate + 1})
     // console.log(this.data.iterate)
@@ -90,11 +92,11 @@ Page({
     // console.log(this.data.iterate)
     // console.log(this.data.prevImage[this.data.iterate])
   },
-  showLoader(){
+  showSplash(){
     setTimeout(()=>{
       this.setData({
-        isLoading: false
+        isSplash: false
       });
-    },2000)
+    },4000)
   }
 });
