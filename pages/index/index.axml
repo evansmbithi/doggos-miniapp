@@ -18,12 +18,13 @@
     title="Save a street dog, today!"
     className="container"
   >
-  
-  <view class="loader" a:if="{{ isLoading }}">
-    <ant-loading type="spin" color="#000" />
-  </view>
+
 
   <view class="doggo-section">
+    <view class="loader" a:if="{{ isLoading }}">
+      <ant-loading type="spin" color="#1677ff" size="large" />
+    </view>
+
     <previous-image-btn onClickMe="previousImage" 
     a:if="{{ prevImage.length >= 2 }}"
     />

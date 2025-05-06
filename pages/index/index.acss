@@ -25,7 +25,6 @@
 }
 
 .container{
-  position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -33,13 +32,10 @@
   align-items: center;
 }
 
-.loader{
-  position: absolute;
-  top: 40vh;
-  left: 40%;
-}
+
 
 .doggo-section{
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -47,4 +43,13 @@
 .doggo-img{
   border-radius: .5rem;
   margin: .1rem;
+}
+
+.loader{
+  position: absolute;
+  left: 45%; 
+  margin: 0 auto;
+  padding: 0;
+  font-weight: bold;
+
 }
