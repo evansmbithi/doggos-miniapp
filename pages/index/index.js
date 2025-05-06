@@ -47,6 +47,7 @@ Page({
       path: 'pages/index/index',
     };
   },
+  
   nextImage(){
     this.setData({iterate: this.data.iterate + 1})
     // console.log(this.data.iterate)
@@ -75,8 +76,8 @@ Page({
       })
     }
   },
-  previousImage(){
-    
+
+  previousImage(){    
     this.setData({iterate: this.data.iterate - 1})
     if (this.data.iterate <= 0){
       if ((this.data.prevImage).length >= 3) {
