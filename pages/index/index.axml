@@ -56,9 +56,9 @@
       > </ant-progress> 
       </view>
 
-
+      <!-- <donation-form></donation-form> -->
       <form-json
-        onSuccess="onSuccess"
+        
       >
         <view>  
           <view style="font-size:24px">

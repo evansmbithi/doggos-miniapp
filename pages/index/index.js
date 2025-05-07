@@ -97,7 +97,8 @@ Page({
   handleRef(ref) {
     this.form.addItem(ref);
 },
-  async submit() {
+  
+async submit() {
     const values = await this.form.submit();
     my.alert({
         title: 'test',

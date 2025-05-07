@@ -1,49 +1,25 @@
-<block
-  a:for="{{config.formItems}}"
-  a:for-index="index"
-  a:for-item="item"
+<form-json
+  onSuccess="onSuccess"
 >
-  <form-input
-    a:if="{{item.type === 'input'}}"
-    label="{{item.label}}"
-    name="{{item.name}}"
-    required="{{item.required}}"
-    message="{{item.message}}"
-    placeholder="{{item.placeholder}}"
-    ref="handleRef"
-  ></form-input>
-  <form-switch
-    a:elif="{{item.type === 'switch'}}"
-    label="{{item.label}}"
-    name="{{item.name}}"
-    message="{{item.message}}"
-    ref="handleRef"
-  ></form-switch>
-  <form-stepper
-    a:elif="{{item.type === 'stepper'}}"
-    label="{{item.label}}"
-    name="{{item.name}}"
-    required="{{item.required}}"
-    message="{{item.message}}"
-    ref="handleRef"
-  ></form-stepper>
-  <slot
-    name="{{item.type}}"
-    a:else
-    value="{{item}}"
-  ></slot>
-</block>
-<button
-  type="{{config.submit.type}}"
-  style="{{config.submit.style}}"
-  onTap="submit"
->
-  {{config.submit.text}}
-</button>
-<button
-  type="{{config.reset.type}}"
-  style="{{config.reset.style}}"
-  onTap="reset"
->
-  {{config.reset.text}}
-</button>
+  <view>  
+    <view style="font-size:24px">
+      Enter Amount
+    </view>
+    
+    <form-input
+      label="Ksh."
+      name="amount"
+      placeholder="1000"
+      ref="handleRef"
+    >
+  </form-input>
+  </view>
+
+  <ant-button
+    type="primary"
+    style="margin: 12px"
+    onTap="submit"
+  >
+    Donate
+  </ant-button>
+</form-json> 
