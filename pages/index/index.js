@@ -85,7 +85,7 @@ Page({
     const newContribution = this.data.contributed + Number(amount)
     const newPercent = (newContribution / this.data.targetAmount) * 100;
     this.setData({
-        percentage: Math.max(Math.min(100, newPercent), 0),
+        percentage: (Math.max(Math.min(100, newPercent), 0)).toFixed(1),
         contributed: newContribution
     });
 },
@@ -100,12 +100,18 @@ Page({
   
 async submit() {
     const values = await this.form.submit();
-    my.alert({
-        title: 'test',
-        content: JSON.stringify(values, null, 2),
-    });
+    // my.alert({
+    //     title: 'test',
+    //     content: JSON.stringify(values, null, 2),
+    // });
 
     this.handleIncrease(values.amount);
+    
+    // trigger on-app MPESA prompt
+    // app.makePayment()
+    // .then(()=>{
+    //   this.handleIncrease(values.amount);
+    // })
     this.reset();
 },
 

@@ -29,5 +29,22 @@ App({
         }
       })
     })
+  },
+  makePayment(){
+    return new Promise((resolve, reject) => {
+      my.tradePay({
+        tradeNO: '3459020231600095', // get the tradeNo from the server first
+        success: (res) => {
+          my.alert({
+            content: JSON.stringify(res),
+          });
+        },
+        fail: (res) => {
+          my.alert({
+            content: JSON.stringify(res),
+          });
+        }
+      });
+    })
   }
 });
