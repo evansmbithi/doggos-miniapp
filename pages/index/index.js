@@ -35,7 +35,8 @@ Page({
         amount: [
             {                
                 required: true,
-                pattern: /[0-9]/,
+                pattern: /^(?!0+(?:\.0+)?$)\d+(\.\d+)?$/
+                ,
                 max: 3,
             },
         ],
