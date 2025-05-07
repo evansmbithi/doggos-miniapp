@@ -34,8 +34,9 @@ Page({
       rules: {
         amount: [
             {                
-                required: true,
-                pattern: /^(?!0+(?:\.0+)?$)\d+(\.\d+)?$/
+                required: true, 
+                // pattern to match positive whole numbers only, excluding decimals
+                pattern: /^[1-9]\d*$/
                 ,
                 max: 3,
             },
