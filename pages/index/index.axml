@@ -24,7 +24,7 @@
       </view>
 
       <view style="width:.5rem">
-        <previous-image-btn onClickMe="previousImage" 
+        <previous-image-btn class="previous-image" onClickMe="previousImage" 
       a:if="{{ prevImage.length >= 2 }}"
       />
       </view>
@@ -32,7 +32,7 @@
       <image class="doggo-img" mode="scaleToFill" src={{ doggos_pic }} alt="picture of a dog"/>
       
       <view style="width:.5rem">
-        <next-image-btn onClickMe="nextImage" 
+        <next-image-btn style="backface-visibility:hidden; background-color:transparent" onClickMe="nextImage" 
         isDisabled="{{ prevImage.length >= 12 }}"  
         /> 
       </view>   

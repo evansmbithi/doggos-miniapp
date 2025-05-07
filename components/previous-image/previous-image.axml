@@ -1,6 +1,6 @@
-<button class="previous-image" onTap="onClickMe">
+<view class="previous-image" onTap="onClickMe">
   <ant-icon
     type="UpCircleOutline"
     className="btn-outline"
 />
-</button>
+</view>
