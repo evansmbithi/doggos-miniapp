@@ -1,8 +1,22 @@
+import { Form } from 'antd-mini/es/Form/form';
+
 const app = getApp();
+
+const validateMessages = {
+  required: 'Please enter amount',
+  string: {
+      max: 'Amount cannot be more than 10,000,000',
+  },
+  pattern: {
+      mismatch: 'Please enter valid amount',
+  },
+};
 
 Page({
   data:{
-    percent2: 60,
+    targetAmount: 20000,
+    contributed: 0,
+    percentage: 0,
     doggos_pic: '',
     isSplash: true,
     isLoading: false,
@@ -13,6 +27,20 @@ Page({
     // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
     this.showSplash()
+    this.handleIncrease(0)
+
+    this.form = new Form({
+      validateMessages,
+      rules: {
+        amount: [
+            {                
+                required: true,
+                pattern: /[0-9]/,
+                max: 3,
+            },
+        ],
+    },
+  });
 
   },
   onReady() {
@@ -51,11 +79,31 @@ Page({
     };
   },
 
-  handleIncrease() {
-    const newPercent = this.data.percent2 + 20;
+  handleIncrease(amount) {
+    const newContribution = this.data.contributed + Number(amount)
+    const newPercent = (newContribution / this.data.targetAmount) * 100;
     this.setData({
-        percent2: Math.max(Math.min(100, newPercent), 0),
+        percentage: Math.max(Math.min(100, newPercent), 0),
+        contributed: newContribution
     });
+},
+  
+  reset() {
+    this.form.reset();
+  },
+
+  handleRef(ref) {
+    this.form.addItem(ref);
+},
+  async submit() {
+    const values = await this.form.submit();
+    my.alert({
+        title: 'test',
+        content: JSON.stringify(values, null, 2),
+    });
+
+    this.handleIncrease(values.amount);
+    this.reset();
 },
 
   nextImage(){

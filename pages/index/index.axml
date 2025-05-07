@@ -18,83 +18,73 @@
     title="Save a street dog, today!"
     className="container"
   >
-
-
   <view class="doggo-section">
-    <view class="loader" a:if="{{ isLoading }}">
-      <ant-loading type="spin" color="#1677ff" size="large" />
+      <view class="loader" a:if="{{ isLoading }}">
+        <ant-loading type="spin" color="#1677ff" size="large" />
+      </view>
+
+      <view style="width:.5rem">
+        <previous-image-btn onClickMe="previousImage" 
+      a:if="{{ prevImage.length >= 2 }}"
+      />
+      </view>
+      
+      <image class="doggo-img" mode="scaleToFill" src={{ doggos_pic }} alt="picture of a dog"/>
+      
+      <view style="width:.5rem">
+        <next-image-btn onClickMe="nextImage" 
+        isDisabled="{{ prevImage.length >= 12 }}"  
+        /> 
+      </view>   
     </view>
 
-    <view style="width:.5rem">
-      <previous-image-btn onClickMe="previousImage" 
-    a:if="{{ prevImage.length >= 2 }}"
-    />
+    <view class="donation-block">
+      <view style="text-align:center">
+        <count-down></count-down>
+      </view>
+
+      <view style="text-align: right;">
+        <view style=" margin: 0 .3rem -.3rem 0;">
+          Ksh. {{targetAmount}}
+          <ant-icon type="DownFill" />          
+        </view>
+        
+        <ant-progress
+        percent="{{percentage}}"
+        strokeWidth="15"
+        style="margin-top: 40rpx;"
+      > </ant-progress> 
+      </view>
+
+
+      <form-json
+        onSuccess="onSuccess"
+      >
+        <view>  
+          <view style="font-size:24px">
+            Enter Amount
+          </view>
+          
+          <form-input
+            label="Ksh."
+            name="amount"
+            placeholder="1000"
+            ref="handleRef"
+          >
+        </form-input>
+        </view>
+
+        <ant-button
+          type="primary"
+          style="margin: 12px"
+          onTap="submit"
+        >
+          Donate
+        </ant-button>
+      </form-json> 
     </view>
-    
-    <image class="doggo-img" mode="scaleToFill" src={{ doggos_pic }} alt="picture of a dog"/>
-    
-    <view style="width:.5rem">
-      <next-image-btn onClickMe="nextImage" 
-      isDisabled="{{ prevImage.length >= 12 }}"  
-      /> 
-    </view>   
-  </view>
+   
 
-  <view style="text-align:center">
-    <count-down></count-down>
-  </view>
-
-  <view>
-    <ant-progress
-    percent="{{percent2}}"
-    strokeWidth="15"
-    style="margin-top: 40rpx;"
-  ></ant-progress>
-  </view>
-
-  <view>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      50
-    </ant-button>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      100
-    </ant-button>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      200
-    </ant-button>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      500
-    </ant-button>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      1000
-    </ant-button>
-  </view>
-
-  
-
-  <view>
-    <ant-button
-      inline
-      onTap="handleIncrease"
-    >
-      Increase
-    </ant-button>
-  </view>
   
 </ant-container>
 

@@ -33,7 +33,6 @@
 }
 
 
-
 .doggo-section{
   position: relative;
   display: flex;
@@ -52,4 +51,11 @@
   padding: 0;
   font-weight: bolder;
 
+}
+
+.donation-block{
+  margin:.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }

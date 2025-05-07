@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "form-input": "antd-mini/es/Form/FormInput/index",
+    "form-switch": "antd-mini/es/Form/FormSwitch/index"
+  }
+}
